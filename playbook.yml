@@ -47,10 +47,10 @@
       - Linux servers
     link_templates: []
   tasks:
-    # note: this is one task, duplicated three times
-    - name: add with zabbix_host
+    # note: both tasks are duplicated, to see their idempotency in a single run
+    - name: add with zabbix_host_pr_24407
       local_action:
-        module: my_zabbix_host
+        module: zabbix_host_pr_24407
         server_url: "http://{{ zabbix_server }}/zabbix/"
         login_user: "{{ zabbix_user }}"
         login_password: "{{ zabbix_pass }}"
@@ -68,9 +68,9 @@
             ip: "{{ ansible_ssh_host }}"
             dns: "{{ ansible_fqdn }}"
             port: 10050
-    - name: add with zabbix_host
+    - name: add with zabbix_host_pr_24407
       local_action:
-        module: my_zabbix_host
+        module: zabbix_host_pr_24407
         server_url: "http://{{ zabbix_server }}/zabbix/"
         login_user: "{{ zabbix_user }}"
         login_password: "{{ zabbix_pass }}"
@@ -88,9 +88,29 @@
             ip: "{{ ansible_ssh_host }}"
             dns: "{{ ansible_fqdn }}"
             port: 10050
-    - name: add with zabbix_host
+    - name: add with zabbix_host_ansible_devel
       local_action:
-        module: my_zabbix_host
+        module: zabbix_host_ansible_devel
+        server_url: "http://{{ zabbix_server }}/zabbix/"
+        login_user: "{{ zabbix_user }}"
+        login_password: "{{ zabbix_pass }}"
+        host_name: "{{ ansible_fqdn }}"
+        visible_name: "{{ ansible_hostname }}"
+        host_groups: "{{ host_groups }}"
+        link_templates: "{{ link_templates }}"
+        status: enabled
+        state: present
+        inventory_mode: automatic
+        interfaces:
+          - type: 1
+            main: 1
+            useip: 0
+            ip: "{{ ansible_ssh_host }}"
+            dns: "{{ ansible_fqdn }}"
+            port: 10050
+    - name: add with zabbix_host_ansible_devel
+      local_action:
+        module: zabbix_host_ansible_devel
         server_url: "http://{{ zabbix_server }}/zabbix/"
         login_user: "{{ zabbix_user }}"
         login_password: "{{ zabbix_pass }}"
