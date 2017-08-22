@@ -27,10 +27,12 @@
         destfile: "/etc/httpd/conf.d/zabbix.conf"
         regexp: "php_value date.timezone"
         line: "php_value date.timezone UTC"
+      register: fix_timezone
     - name: reload Apache
       service:
         name: httpd
         state: reloaded
+      when: fix_timezone|changed
 
 ###
 ### this is the system under test: the zabbix_host module
