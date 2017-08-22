@@ -1,0 +1,3 @@
+- name: dj-wasabi.zabbix-agent
+- name: dj-wasabi.zabbix-server
+- name: galaxyproject.postgresql

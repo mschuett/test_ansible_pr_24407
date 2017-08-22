@@ -1,0 +1,546 @@
+[mschuett@work:/tmp/test_ansible_pr_24407]↥ master(1) ± vagrant up
+Bringing machine 'zabbix' up with 'virtualbox' provider...
+Bringing machine 'workstation' up with 'virtualbox' provider...
+==> zabbix: Importing base box 'bento/centos-7.3'...
+==> zabbix: Matching MAC address for NAT networking...
+==> zabbix: Checking if box 'bento/centos-7.3' is up to date...
+==> zabbix: Setting the name of the VM: test_ansible_pr_24407_zabbix_1503418909063_52733
+==> zabbix: Clearing any previously set network interfaces...
+==> zabbix: Preparing network interfaces based on configuration...
+    zabbix: Adapter 1: nat
+    zabbix: Adapter 2: hostonly
+==> zabbix: Forwarding ports...
+    zabbix: 80 (guest) => 8000 (host) (adapter 1)
+    zabbix: 22 (guest) => 2222 (host) (adapter 1)
+==> zabbix: Running 'pre-boot' VM customizations...
+==> zabbix: Booting VM...
+==> zabbix: Waiting for machine to boot. This may take a few minutes...
+    zabbix: SSH address: 127.0.0.1:2222
+    zabbix: SSH username: vagrant
+    zabbix: SSH auth method: private key
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: Warning: Remote connection disconnect. Retrying...
+    zabbix: Warning: Connection reset. Retrying...
+    zabbix: 
+    zabbix: Vagrant insecure key detected. Vagrant will automatically replace
+    zabbix: this with a newly generated keypair for better security.
+    zabbix: 
+    zabbix: Inserting generated public key within guest...
+    zabbix: Removing insecure key from the guest if it's present...
+    zabbix: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> zabbix: Machine booted and ready!
+==> zabbix: Checking for guest additions in VM...
+==> zabbix: Setting hostname...
+==> zabbix: Configuring and enabling network interfaces...
+    zabbix: SSH address: 127.0.0.1:2222
+    zabbix: SSH username: vagrant
+    zabbix: SSH auth method: private key
+==> zabbix: Configuring proxy environment variables...
+==> zabbix: Configuring proxy for Yum...
+==> zabbix: Mounting shared folders...
+    zabbix: /vagrant => /tmp/test_ansible_pr_24407
+==> zabbix: Running provisioner: shell...
+    zabbix: Running: script: fix_private_network_if
+==> workstation: Importing base box 'bento/centos-7.3'...
+==> workstation: Matching MAC address for NAT networking...
+==> workstation: Checking if box 'bento/centos-7.3' is up to date...
+==> workstation: Setting the name of the VM: test_ansible_pr_24407_workstation_1503418993755_66745
+==> workstation: Fixed port collision for 22 => 2222. Now on port 2200.
+==> workstation: Clearing any previously set network interfaces...
+==> workstation: Preparing network interfaces based on configuration...
+    workstation: Adapter 1: nat
+    workstation: Adapter 2: hostonly
+==> workstation: Forwarding ports...
+    workstation: 22 (guest) => 2200 (host) (adapter 1)
+==> workstation: Running 'pre-boot' VM customizations...
+==> workstation: Booting VM...
+==> workstation: Waiting for machine to boot. This may take a few minutes...
+    workstation: SSH address: 127.0.0.1:2200
+    workstation: SSH username: vagrant
+    workstation: SSH auth method: private key
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: Warning: Connection reset. Retrying...
+    workstation: Warning: Remote connection disconnect. Retrying...
+    workstation: 
+    workstation: Vagrant insecure key detected. Vagrant will automatically replace
+    workstation: this with a newly generated keypair for better security.
+    workstation: 
+    workstation: Inserting generated public key within guest...
+    workstation: Removing insecure key from the guest if it's present...
+    workstation: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> workstation: Machine booted and ready!
+==> workstation: Checking for guest additions in VM...
+==> workstation: Setting hostname...
+==> workstation: Configuring and enabling network interfaces...
+    workstation: SSH address: 127.0.0.1:2200
+    workstation: SSH username: vagrant
+    workstation: SSH auth method: private key
+==> workstation: Configuring proxy environment variables...
+==> workstation: Configuring proxy for Yum...
+==> workstation: Mounting shared folders...
+    workstation: /vagrant => /tmp/test_ansible_pr_24407
+==> workstation: Running provisioner: shell...
+    workstation: Running: script: fix_private_network_if
+==> workstation: Running provisioner: ansible_local...
+    workstation: Installing Ansible...
+    workstation: Installing pip... (for Ansible installation)
+    workstation: Running ansible-galaxy...
+- changing role dj-wasabi.zabbix-agent from 0.10.0 to unspecified
+- downloading role 'zabbix-agent', owned by dj-wasabi
+- downloading role from https://github.com/dj-wasabi/ansible-zabbix-agent/archive/0.10.0.tar.gz
+- extracting dj-wasabi.zabbix-agent to /vagrant/roles/dj-wasabi.zabbix-agent
+- dj-wasabi.zabbix-agent (0.10.0) was installed successfully
+- changing role dj-wasabi.zabbix-server from 0.8.0 to unspecified
+- downloading role 'zabbix-server', owned by dj-wasabi
+- downloading role from https://github.com/dj-wasabi/ansible-zabbix-server/archive/0.8.0.tar.gz
+- extracting dj-wasabi.zabbix-server to /vagrant/roles/dj-wasabi.zabbix-server
+- dj-wasabi.zabbix-server (0.8.0) was installed successfully
+ [WARNING]: - dependency geerlingguy.apache from role dj-wasabi.zabbix-server
+differs from already installed version (2.1.1), skipping
+- changing role galaxyproject.postgresql from 0.9.4 to unspecified
+- downloading role 'postgresql', owned by galaxyproject
+- downloading role from https://github.com/galaxyproject/ansible-postgresql/archive/0.9.4.tar.gz
+- extracting galaxyproject.postgresql to /vagrant/roles/galaxyproject.postgresql
+- galaxyproject.postgresql (0.9.4) was installed successfully
+    workstation: Running ansible-playbook...
+
+PLAY [workstation] *************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [workstation]
+
+TASK [pip install zabbix_api] **************************************************
+changed: [workstation]
+
+PLAY [zabbix] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [zabbix]
+
+TASK [galaxyproject.postgresql : Install pgdg package signing key (Debian/pgdg)] ***
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Install pgdg repository (Debian/pgdg)] ********
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Install PostgreSQL (Debian)] ******************
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Get installed version] ************************
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Set version fact] *****************************
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Set version fact] *****************************
+ok: [zabbix]
+
+TASK [galaxyproject.postgresql : include_vars] *********************************
+ok: [zabbix]
+
+TASK [galaxyproject.postgresql : Set pgdata fact] ******************************
+ok: [zabbix]
+
+TASK [galaxyproject.postgresql : Set conf dir fact] ****************************
+ok: [zabbix]
+
+TASK [galaxyproject.postgresql : Check pgdg repository package (RedHat)] *******
+fatal: [zabbix]: FAILED! => {"changed": false, "failed": true, "msg": "No package matching 'pgdg-centos94' found available, installed or updated", "rc": 126, "results": ["No package matching 'pgdg-centos94' found available, installed or updated"]}
+...ignoring
+
+TASK [galaxyproject.postgresql : Determine latest pgdg repository package (RedHat)] ***
+changed: [zabbix]
+
+TASK [galaxyproject.postgresql : Install pgdg repository package (RedHat)] *****
+changed: [zabbix]
+
+TASK [galaxyproject.postgresql : Install PostgreSQL (RedHat)] ******************
+changed: [zabbix]
+
+TASK [galaxyproject.postgresql : Check for pgdata directory] *******************
+ok: [zabbix]
+
+TASK [galaxyproject.postgresql : Initialize database (RedHat < 7)] *************
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Initialize database (RedHat >= 7)] ************
+changed: [zabbix]
+
+TASK [galaxyproject.postgresql : Create conf.d] ********************************
+changed: [zabbix]
+
+TASK [galaxyproject.postgresql : Set conf.d include in postgresql.conf] ********
+ [WARNING]: when statements should not include jinja2 templating delimiters
+such as {{ }} or {% %}. Found: {{ postgresql_version | version_compare('9.3',
+'>=') }}
+
+changed: [zabbix]
+
+TASK [galaxyproject.postgresql : Include 25ansible_postgresql.conf in postgresql.conf] ***
+ [WARNING]: when statements should not include jinja2 templating delimiters
+such as {{ }} or {% %}. Found: {{ postgresql_version | version_compare('9.3',
+'<') }}
+
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Set config options] ***************************
+changed: [zabbix]
+
+TASK [galaxyproject.postgresql : Install pg_hba.conf] **************************
+changed: [zabbix]
+
+TASK [galaxyproject.postgresql : Create backup directories] ********************
+skipping: [zabbix] => (item=~postgres/backup/active) 
+skipping: [zabbix] => (item=~postgres/backup/bin) 
+skipping: [zabbix] => (item=~postgres/backup) 
+
+TASK [galaxyproject.postgresql : Install backup scripts] ***********************
+skipping: [zabbix] => (item=scheduled_backup.sh) 
+skipping: [zabbix] => (item=archive_wal.sh) 
+skipping: [zabbix] => (item=backup_working_wal.sh) 
+
+TASK [galaxyproject.postgresql : Set WAL archive config options] ***************
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Schedule backups] *****************************
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Schedule PostgreSQL working WAL backup] *******
+skipping: [zabbix]
+
+TASK [galaxyproject.postgresql : Ensure PostgreSQL is running] *****************
+changed: [zabbix]
+
+TASK [geerlingguy.apache : Include OS-specific variables.] *********************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : Include variables for Amazon Linux.] ****************
+skipping: [zabbix]
+
+TASK [geerlingguy.apache : Define apache_packages.] ****************************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : include] ********************************************
+included: /vagrant/roles/geerlingguy.apache/tasks/setup-RedHat.yml for zabbix
+
+TASK [geerlingguy.apache : Ensure Apache is installed on RHEL.] ****************
+changed: [zabbix] => (item=[u'httpd', u'httpd-devel', u'mod_ssl', u'openssh'])
+
+TASK [geerlingguy.apache : Get installed version of Apache.] *******************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : Create apache_version variable.] ********************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : include_vars] ***************************************
+skipping: [zabbix]
+
+TASK [geerlingguy.apache : include_vars] ***************************************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : include] ********************************************
+included: /vagrant/roles/geerlingguy.apache/tasks/configure-RedHat.yml for zabbix
+
+TASK [geerlingguy.apache : Configure Apache.] **********************************
+ok: [zabbix] => (item={u'regexp': u'^Listen ', u'line': u'Listen 80'})
+
+TASK [geerlingguy.apache : Check whether certificates defined in vhosts exist.] ***
+
+TASK [geerlingguy.apache : Add apache vhosts configuration.] *******************
+changed: [zabbix]
+
+TASK [geerlingguy.apache : Ensure Apache has selected state and enabled on boot.] ***
+changed: [zabbix]
+
+TASK [geerlingguy.apache : Include OS-specific variables.] *********************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : Include variables for Amazon Linux.] ****************
+skipping: [zabbix]
+
+TASK [geerlingguy.apache : Define apache_packages.] ****************************
+skipping: [zabbix]
+
+TASK [geerlingguy.apache : include] ********************************************
+included: /vagrant/roles/geerlingguy.apache/tasks/setup-RedHat.yml for zabbix
+
+TASK [geerlingguy.apache : Ensure Apache is installed on RHEL.] ****************
+ok: [zabbix] => (item=[u'httpd', u'httpd-devel', u'mod_ssl', u'openssh'])
+
+TASK [geerlingguy.apache : Get installed version of Apache.] *******************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : Create apache_version variable.] ********************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : include_vars] ***************************************
+skipping: [zabbix]
+
+TASK [geerlingguy.apache : include_vars] ***************************************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : include] ********************************************
+included: /vagrant/roles/geerlingguy.apache/tasks/configure-RedHat.yml for zabbix
+
+TASK [geerlingguy.apache : Configure Apache.] **********************************
+ok: [zabbix] => (item={u'regexp': u'^Listen ', u'line': u'Listen 80'})
+
+TASK [geerlingguy.apache : Check whether certificates defined in vhosts exist.] ***
+
+TASK [geerlingguy.apache : Add apache vhosts configuration.] *******************
+ok: [zabbix]
+
+TASK [geerlingguy.apache : Ensure Apache has selected state and enabled on boot.] ***
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Include OS-specific variables] *****************
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Set short version name] ************************
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Get Apache version] ****************************
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Set correct apache_version] ********************
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Use Zabbix package name] **************
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Use EPEL package name] ****************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Set some facts EPEL] ******************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Set some facts Zabbix < 3.0] **********
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Set facts for Zabbix >= 3.0] **********
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Install basic repo file] **************
+changed: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Installing zabbix-server-pgsql] *******
+changed: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Install zabbix-web-pgsql] *************
+changed: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Install apache vhost] *****************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Install Ansible module dependencies] ***
+changed: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Install Mysql Client package RHEL7] ***
+skipping: [zabbix] => (item=[]) 
+
+TASK [dj-wasabi.zabbix-server : RedHat | Install Mysql Client package RHEL5 - 6] ***
+skipping: [zabbix] => (item=[]) 
+
+TASK [dj-wasabi.zabbix-server : RedHat | Install PostgreSQL client package] ****
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : RedHat | Install related SELinux package] ******
+ok: [zabbix] => (item=[u'libsemanage-python'])
+
+TASK [dj-wasabi.zabbix-server : RedHat | Enable httpd_can_connect_zabbix SELinux boolean] ***
+skipping: [zabbix] => (item=httpd_can_connect_zabbix) 
+
+TASK [dj-wasabi.zabbix-server : RedHat | Enable zabbix_can_network SELinux boolean] ***
+skipping: [zabbix] => (item=zabbix_can_network) 
+
+TASK [dj-wasabi.zabbix-server : Debian | Set some facts] ***********************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | Set some facts for Zabbix 3.0] ********
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | Installing repository CentOS] *********
+skipping: [zabbix] => (item=deb) 
+skipping: [zabbix] => (item=deb-src) 
+
+TASK [dj-wasabi.zabbix-server : Debian | Install gpg key] **********************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | Installing zabbix-server-pgsql] *******
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | Install php5-pgsql] *******************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Ubuntu | Install php7-pgsql] *******************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | Install zabbix-web] *******************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | install apache vhost] *****************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | enable apache vhost] ******************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | Install Ansible module dependencies] ***
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Debian | Install Mysql Client package] *********
+skipping: [zabbix] => (item=[]) 
+
+TASK [dj-wasabi.zabbix-server : Debian | Install PostgreSQL Client package] ****
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Set the correct delegated_dbhost (to support postgres db deployment on a remote dbhost)] ***
+ok: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : PostgreSQL | Create database] ******************
+changed: [zabbix -> None]
+
+TASK [dj-wasabi.zabbix-server : PostgreSQL | Create database user] *************
+changed: [zabbix -> None]
+
+TASK [dj-wasabi.zabbix-server : PostgreSQL | Create schema] ********************
+changed: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : PostgreSQL | Importing schema file] ************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : PostgreSQL | Importing images file] ************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : PostgreSQL | Importing data file] **************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Set the correct delegated_dbhost (to support MySQL db deployment on a remote dbhost)] ***
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : MySQL | Create database] ***********************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : MySQL | Create database user] ******************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : MySQL | Importing schema file] *****************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : MySQL | Importing schema file] *****************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : MySQL | Importing images file] *****************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : MySQL | Importing data file] *******************
+skipping: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Configure zabbix-server] ***********************
+changed: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Create include dir zabbix-server] **************
+changed: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Create zabbix-web directory] *******************
+changed: [zabbix]
+
+TASK [dj-wasabi.zabbix-server : Configure zabbix-web] **************************
+changed: [zabbix]
+
+TASK [fix php timezone] ********************************************************
+changed: [zabbix]
+
+TASK [reload Apache] ***********************************************************
+changed: [zabbix]
+
+RUNNING HANDLER [galaxyproject.postgresql : Reload PostgreSQL] *****************
+changed: [zabbix]
+
+RUNNING HANDLER [geerlingguy.apache : restart apache] **************************
+changed: [zabbix]
+
+RUNNING HANDLER [dj-wasabi.zabbix-server : zabbix-server restarted] ************
+changed: [zabbix]
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [zabbix]
+ok: [workstation]
+
+TASK [add with zabbix_host] ****************************************************
+changed: [zabbix -> localhost]
+changed: [workstation -> localhost]
+
+TASK [add with zabbix_host] ****************************************************
+ok: [workstation -> localhost]
+ok: [zabbix -> localhost]
+
+TASK [add with zabbix_host] ****************************************************
+ok: [workstation -> localhost]
+ok: [zabbix -> localhost]
+
+PLAY RECAP *********************************************************************
+workstation                : ok=6    changed=2    unreachable=0    failed=0   
+zabbix                     : ok=66   changed=29   unreachable=0    failed=0   

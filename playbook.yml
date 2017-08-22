@@ -1,0 +1,108 @@
+---
+###
+### prepare installation
+###
+- hosts: workstation
+  tasks:
+    - name: pip install zabbix_api
+      pip:
+        name: zabbix_api
+
+- hosts: zabbix
+  roles:
+    - role: galaxyproject.postgresql
+      postgresql_pg_hba_conf: 
+        - "host all all 127.0.0.1/32 trust"
+        - "host all all ::1/128 trust"
+      postgresql_pg_hba_local_ipv4: false
+      postgresql_pg_hba_local_ipv6: false
+    - role: geerlingguy.apache
+    - role: dj-wasabi.zabbix-server
+      zabbix_vhost: false
+      database_type: pgsql
+      database_type_long: postgresql
+  tasks:
+    - name: fix php timezone
+      lineinfile:
+        destfile: "/etc/httpd/conf.d/zabbix.conf"
+        regexp: "php_value date.timezone"
+        line: "php_value date.timezone UTC"
+    - name: reload Apache
+      service:
+        name: httpd
+        state: reloaded
+
+###
+### this is the system under test: the zabbix_host module
+###
+
+- hosts: all
+  vars:
+    zabbix_server: "192.168.56.202"
+    zabbix_user: Admin
+    zabbix_pass: zabbix
+    host_groups:
+      - Linux servers
+    link_templates: []
+  tasks:
+    # note: this is one task, duplicated three times
+    - name: add with zabbix_host
+      local_action:
+        module: my_zabbix_host
+        server_url: "http://{{ zabbix_server }}/zabbix/"
+        login_user: "{{ zabbix_user }}"
+        login_password: "{{ zabbix_pass }}"
+        host_name: "{{ ansible_fqdn }}"
+        visible_name: "{{ ansible_hostname }}"
+        host_groups: "{{ host_groups }}"
+        link_templates: "{{ link_templates }}"
+        status: enabled
+        state: present
+        inventory_mode: automatic
+        interfaces:
+          - type: 1
+            main: 1
+            useip: 0
+            ip: "{{ ansible_ssh_host }}"
+            dns: "{{ ansible_fqdn }}"
+            port: 10050
+    - name: add with zabbix_host
+      local_action:
+        module: my_zabbix_host
+        server_url: "http://{{ zabbix_server }}/zabbix/"
+        login_user: "{{ zabbix_user }}"
+        login_password: "{{ zabbix_pass }}"
+        host_name: "{{ ansible_fqdn }}"
+        visible_name: "{{ ansible_hostname }}"
+        host_groups: "{{ host_groups }}"
+        link_templates: "{{ link_templates }}"
+        status: enabled
+        state: present
+        inventory_mode: automatic
+        interfaces:
+          - type: 1
+            main: 1
+            useip: 0
+            ip: "{{ ansible_ssh_host }}"
+            dns: "{{ ansible_fqdn }}"
+            port: 10050
+    - name: add with zabbix_host
+      local_action:
+        module: my_zabbix_host
+        server_url: "http://{{ zabbix_server }}/zabbix/"
+        login_user: "{{ zabbix_user }}"
+        login_password: "{{ zabbix_pass }}"
+        host_name: "{{ ansible_fqdn }}"
+        visible_name: "{{ ansible_hostname }}"
+        host_groups: "{{ host_groups }}"
+        link_templates: "{{ link_templates }}"
+        status: enabled
+        state: present
+        inventory_mode: automatic
+        interfaces:
+          - type: 1
+            main: 1
+            useip: 0
+            ip: "{{ ansible_ssh_host }}"
+            dns: "{{ ansible_fqdn }}"
+            port: 10050
